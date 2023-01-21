@@ -63,7 +63,7 @@ RUN apk add --no-cache tzdata \
     #pip wheel --wheel-dir=/wheels uwsgi gevent && \
     rm -rf ${SRC_DIR}/get-pip.py
 
-COPY common/supervisord.conf /etc
+COPY setup/supervisord.conf /etc
 
 # Install CKAN
 RUN pip3 install -e git+${GIT_URL}@${GIT_BRANCH}#egg=ckan && \
